@@ -18,12 +18,13 @@ function getNombres (){
 
 
 const Nombres = () => {
-  return <ul> { getNombres()} </ul>
+  return <ul> { 
+    nombres.map((nombre, index) => <li key={index}>{nombre}</li>)
+  }</ul>
 }
-  
 
 const App = ()=>{
-  return <h1><Nombres/> </h1>;
+  return <div><Nombres/> </div>;
 }
 
 render(<App />, document.getElementById('root'));
