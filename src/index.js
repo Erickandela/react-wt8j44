@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { render } from 'react-dom';
 
-const Saludar = ({nombre, idioma = 'en'})=>{
-  const saludo = idioma === 'es' ? 'hola' : 'Hello';
-  return <p> { saludo} {nombre}</p>
+const Button = () =>{
+  const[counter, setCounter] = useState(0);
+  return (
+    <div>
+    <p> Presionado: { counter } </p>
+    <button onClick={ ()=> setCounter(counter + 1)}> Haz Click</button>
+    </div>
+  )
+    
+  
 }
 
 const App = () =>{
-  return <div> <Saludar nombre = 'Erick' /></div>;
+  return <div> <Button /></div>;
 }
 
 render(<App />, document.getElementById('root'));
