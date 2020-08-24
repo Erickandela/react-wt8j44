@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 
-//const App = ()=> <h1> Hola Mundo </h1>
+const Saludar = ({nombre, idioma = 'en'})=>{
+  const saludo = idioma === 'es' ? 'hola' : 'Hello';
+  return <p> { saludo} {nombre}</p>
+}
 
-class App extends Component{
-  render(){
-    return <h1>Hola Mundo</h1>
-  }
+const App = () =>{
+  return <div> <Saludar nombre = 'Erick' /></div>;
 }
 
 render(<App />, document.getElementById('root'));
