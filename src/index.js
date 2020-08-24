@@ -1,20 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { render } from 'react-dom';
 
-const Button = () =>{
-  const[counter, setCounter] = useState(0);
-
-  useEffect (()=>{
-    console.log("Me ejecuté");
-    return ()=>{
-      console.log("Adios");
-    }
-  },[]);
-  return <button onClick={ ()=> setCounter(counter + 1)}> Haz Click {counter}</button>
+const Saludo = ()=>{
+  const [name, setName] = useState("");
+  return(
+    <div>
+    <input type="text" onChange={ (ev)=> setName(ev.target.value)} />
+    <p> Hola {name} </p>
+    </div>
+  );
 }
 
 const App = () =>{
-  return <div> <Button /></div>;
+  return <div> <Saludo /></div>;
 }
 
 render(<App />, document.getElementById('root'));
